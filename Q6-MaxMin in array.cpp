@@ -3,26 +3,29 @@ using namespace std;
 
 int getMax(int arr[],int size){
 
-      int max = arr[0];
+      int maxi = arr[0];
 
-      for(int i = 0;i<size;i++){
-        if(arr[i] > max){
-            max = arr[i];
-        }
-      }
-      return max;
+    for(int i = 0;i<size;i++){
+       maxi = max(maxi,arr[i]);
+    //     if(arr[i] > max){
+    //         max = arr[i];
+    //     }
+       }
+       
+      return maxi;
 }
 
 int getMin(int arr[],int size){
 
-      int min = arr[0];
+      int mini = arr[0];
 
       for(int i = 0;i<size;i++){
-        if(arr[i] < min){
-            min = arr[i];
-        }
+        mini = min(mini,arr[i]);
+        // if(arr[i] < min){
+        //     min = arr[i];
+        // }
       }
-      return min;
+      return mini;
 }
 int main()
 {
