@@ -19,3 +19,22 @@ public:
         
     }
 };
+
+//recursively
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+
+        //base case
+        if(head == NULL || head ->next == NULL){
+            return head;
+        }
+
+        ListNode* chotaHead = reverseList(head->next);
+
+        head -> next -> next = head;
+        head -> next = NULL;
+
+        return chotaHead;
+    }
+};
