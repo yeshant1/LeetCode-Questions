@@ -1,5 +1,7 @@
 //coding ninjas 
 //Iteratively
+LinkedListNode<int>* reverseLinkedList(LinkedListNode<int>* head{
+  //base case
   if(head == NULL || head -> next == NULL){
 
         return head;
@@ -27,4 +29,26 @@
     }
 
     return prev;
+}
 
+
+//recursively
+
+    //base case
+ LinkedListNode<int>* reverse1(LinkedListNode<int>* head){
+    if(head == NULL || head->next == NULL){
+        return head;
+    }
+
+    LinkedListNode<int>* chotaHead = reverse1(head->next);
+
+    head->next->next = head;
+    head->next = NULL;
+
+    return chotaHead;
+}
+LinkedListNode<int> *reverseLinkedList(LinkedListNode<int> *head) 
+{
+    return reverse1(head);
+    // Write your code here
+}
